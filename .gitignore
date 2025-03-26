@@ -1,0 +1,11 @@
+node_modules
+data
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+.idea
+.vscode
+.DS_Store

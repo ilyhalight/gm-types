@@ -1,0 +1,43 @@
+{
+  "name": "@toil/gm-types",
+  "description": "All-in-One GM API types (Greasemonkey, Tampermonkey, Violetmonkey and etc)",
+  "version": "1.0.0",
+  "author": "Toil",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyhalight/gm-types"
+  },
+  "bugs": {
+    "url": "https://github.com/ilyhalight/gm-types/issues"
+  },
+  "homepage": "https://github.com/ilyhalight/gm-types#readme",
+  "types": "src/index.d.ts",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts"
+    },
+    "./*": {
+      "types": "./src/*.d.ts"
+    }
+  },
+  "keywords": [
+    "gm",
+    "types",
+    "greasemonkey",
+    "tampermonkey",
+    "violetmonkey",
+    "userscripts",
+    "monkey"
+  ],
+  "devDependencies": {
+    "bun-types": "^1.2.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
