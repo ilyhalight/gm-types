@@ -1,6 +1,7 @@
 import type { GMInfo } from "./info";
+import type { GMNotificationOptions } from "./notification";
 
-declare function GM_info(): GMInfo;
+declare const GM_info: GMInfo;
 
 /**
  * @available Tampermonkey, Violetmonkey, OrangeMonkey, FireMonkey
