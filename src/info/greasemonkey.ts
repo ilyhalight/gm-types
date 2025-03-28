@@ -21,7 +21,7 @@ export type Resource = Record<string, ResourceItem>;
 /**
  * @available Greasemonkey
  */
-export type RunAt = "end";
+export type RunAt = "start" | "end" | "idle";
 
 /**
  * @available Greasemonkey
@@ -33,6 +33,9 @@ export type GMInfoScriptMeta = Omit<
 > & {
   description: string | null;
   namespace: string | null;
+  /**
+   * @default "end"
+   */
   runAt: RunAt;
   version: string | null;
 };
