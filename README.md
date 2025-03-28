@@ -14,8 +14,29 @@ All-in-One GM API types (Greasemonkey, Tampermonkey, Violetmonkey and etc)
 
 To install:
 
+Bun:
+
 ```bash
-bun install @vot.js/shared
+bun install @toil/gm-types
+```
+
+NPM:
+
+```bash
+npm install @toil/gm-types
+```
+
+## Usage
+
+After installation add `@toil/gm-types/v4` or/and `@toil/gm-types/v3` to tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "types": ["@toil/gm-types/v3"]
+    //...
+  }
+}
 ```
 
 ## Supported APIs
@@ -28,8 +49,6 @@ Currently, only these APIs are supported (with their `GM.` alternatives):
 - GM_addStyle
 - GM_xmlhttpRequest
 - GM_getResourceURL
-
-<!-- window.focus, GM storage not supported in UserScripts -->
 
 ## Supported Extensions
 
