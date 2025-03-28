@@ -37,6 +37,9 @@
     "userscripts",
     "monkey"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "bun-types": "^1.2.6"
   },
