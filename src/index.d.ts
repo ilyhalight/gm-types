@@ -1,5 +1,6 @@
 import type { GMInfo } from "./info";
 import type { GMNotificationOptions } from "./notification";
+import type { GMXmlHttpRequestDetails } from "./xmlHttpRequest";
 
 type KeysOrDefaultValue = null | object | string | number | undefined | boolean;
 
@@ -78,3 +79,19 @@ declare function GM_deleteValues(keys: string[]): undefined;
  * @warning ❌ UserScripts
  */
 declare function GM_listValues<T extends string = string>(): T[];
+
+/**
+ * @available Tampermonkey, Violetmonkey, AdGuard, OrangeMonkey, Firemonkey
+ * @note Older versions of Violentmonkey (prior to 2.12.0) returned an imitation of Promise, which is still maintained for compatibility
+ * @warning ❌ UserScripts, ❌ Greasemonkey
+ */
+declare function GM_addStyle(css: string): HTMLStyleElement;
+
+/**
+ * @available Tampermonkey, Violetmonkey, OrangeMonkey, Firemonkey, UserScripts, AdGuard (!)
+ * @throws AdGuard using your own proxy for all requests and can throw on error statuc code
+ * @warning ❌ Greasemonkey
+ */
+declare function GM_xmlhttpRequest(details: GMXmlHttpRequestDetails): {
+  abort: () => void;
+};

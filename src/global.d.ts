@@ -1,6 +1,10 @@
 import type { GMInfo } from "./info";
 import type { GMNotificationOptions } from "./notification";
+import type { GMXmlHttpRequestDetails } from "./xmlHttpRequest";
 
+/**
+ * @warning ❌ OrangeMonkey
+ */
 declare namespace GM {
   const info: GMInfo;
   function notification(
@@ -12,8 +16,8 @@ declare namespace GM {
   function notification(options: GMNotificationOptions): undefined;
 
   /**
-   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, Firemonkey
-   * @note In Firemonkey, if grant has GM_getValue and GM.getValue, GM_getValue becomes unvailable
+   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, FireMonkey
+   * @note In FireMonkey, if grant has GM_getValue and GM.getValue, GM_getValue becomes unvailable
    */
   function getValue<T = unknown>(
     key: string,
@@ -34,8 +38,8 @@ declare namespace GM {
   ): Promise<T>;
 
   /**
-   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, Firemonkey
-   * @note In Firemonkey, if grant has GM_setValue and GM.setValue, GM_setValue becomes unvailable
+   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, FireMonkey
+   * @note In FireMonkey, if grant has GM_setValue and GM.setValue, GM_setValue becomes unvailable
    */
   function setValue<T = string | boolean | number | undefined>(
     key: string,
@@ -50,8 +54,8 @@ declare namespace GM {
   >(keysOrDefault: T): Promise<undefined>;
 
   /**
-   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, Firemonkey
-   * @note In Firemonkey, if grant has GM_deleteValue and GM.deleteValue, GM_deleteValue becomes unvailable
+   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, FireMonkey
+   * @note In FireMonkey, if grant has GM_deleteValue and GM.deleteValue, GM_deleteValue becomes unvailable
    */
   function deleteValue(key: string): Promise<undefined>;
 
@@ -61,8 +65,21 @@ declare namespace GM {
   function deleteValues(keys: string[]): Promise<undefined>;
 
   /**
-   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, Firemonkey
-   * @note In Firemonkey, if grant has GM_listValues and GM.listValues, GM_listValues becomes unvailable
+   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, AdGuard, FireMonkey
+   * @note In FireMonkey, if grant has GM_listValues and GM.listValues, GM_listValues becomes unvailable
    */
   function listValues<T extends string = string>(): Promise<T[]>;
+
+  /**
+   * @available Tampermonkey, Violetmonkey, UserScripts, FireMonkey
+   * @note I guess only FireMonkey return undefined
+   * @warning ❌ Greasemonkey, ❌ AdGuard
+   */
+  function addStyle(css: string): Promise<HTMLStyleElement | undefined>;
+
+  /**
+   * @available Greasemonkey, Tampermonkey, Violetmonkey, UserScripts, FireMonkey, AdGuard (!)
+   * @note Greasemonkey: response equal undefined
+   */
+  function xmlHttpRequest(details: GMXmlHttpRequestDetails): undefined;
 }

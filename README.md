@@ -18,12 +18,15 @@ To install:
 bun install @vot.js/shared
 ```
 
-## Supported Types
+## Supported APIs
 
-Currently, only these types are supported:
+Currently, only these APIs are supported (with their `GM.` alternatives):
 
 - GM_info
 - GM_notification
+- GM Storage (GM_getValue, GM_setValue and etc)
+- GM_addStyle
+- GM_xmlhttpRequest
 
 <!-- window.focus, GM storage not supported in UserScripts -->
 
