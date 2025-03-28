@@ -12,17 +12,20 @@
     "url": "https://github.com/ilyhalight/gm-types/issues"
   },
   "homepage": "https://github.com/ilyhalight/gm-types#readme",
-  "types": "src/index.d.ts",
+  "types": "src/v4.d.ts",
   "type": "module",
   "files": [
     "src"
   ],
   "exports": {
-    ".": {
-      "types": "./src/index.d.ts"
+    "./v4": {
+      "types": "./src/v4.d.ts"
     },
-    "./*": {
-      "types": "./src/*.d.ts"
+    "./v3": {
+      "types": "./src/v3.d.ts"
+    },
+    "./types/*": {
+      "types": "./src/*.ts"
     }
   },
   "keywords": [
