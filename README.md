@@ -27,6 +27,7 @@ Currently, only these APIs are supported (with their `GM.` alternatives):
 - GM Storage (GM_getValue, GM_setValue and etc)
 - GM_addStyle
 - GM_xmlhttpRequest
+- GM_getResourceURL
 
 <!-- window.focus, GM storage not supported in UserScripts -->
 

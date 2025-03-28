@@ -95,3 +95,19 @@ declare function GM_addStyle(css: string): HTMLStyleElement;
 declare function GM_xmlhttpRequest(details: GMXmlHttpRequestDetails): {
   abort: () => void;
 };
+
+/**
+ * Allows userscripts to access the URL of a resource (such as a CSS or image file)
+ * that has been included in the userscript via a `@resource` tag at the script header.
+ *
+ * @available Greasemonkey, Tampermonkey, Violetmonkey, FireMonkey, AdGuard
+ * @warning ❌ UserScripts, ❌ OrangeMonkey
+ */
+declare function GM_getResourceURL(name: string): string;
+/**
+ * Retrieves a blob: or data: URL of a resource from the metadata block.
+ *
+ * @param isBlobUrl (default: true) - return `blob:`?
+ * @available Violetmonkey 2.13.1+
+ */
+declare function GM_getResourceURL(name: string, isBlobUrl: boolean = true);
