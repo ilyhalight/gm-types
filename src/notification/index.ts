@@ -14,7 +14,7 @@ export type GMNotificationOptions = {
    * This way you can update existing notifications by calling GM_notification again and using the same tag.
    * If you don't provide a tag, a new notification will be created every time.
    *
-   * @available Tampermonkey v5.0+, Violetmonkey 2.15.4+
+   * @available Tampermonkey v5.0+, Violentmonkey 2.15.4+
    */
   tag?: string;
   /**
@@ -32,7 +32,7 @@ export type GMNotificationOptions = {
   /**
    * A boolean flag whether to not play a sound
    *
-   * @available Tampermonkey, Violetmonkey 2.15.2+ (Chrome 70)
+   * @available Tampermonkey, Violentmonkey 2.15.2+ (Chrome 70)
    * @default false
    */
   silent?: boolean;

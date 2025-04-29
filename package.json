@@ -1,6 +1,6 @@
 {
   "name": "@toil/gm-types",
-  "description": "All-in-One GM API types (Greasemonkey, Tampermonkey, Violetmonkey and etc)",
+  "description": "All-in-One GM API types (Greasemonkey, Tampermonkey, Violentmonkey and etc)",
   "version": "1.0.1",
   "author": "Toil",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "types",
     "greasemonkey",
     "tampermonkey",
-    "violetmonkey",
+    "violentmonkey",
     "userscripts",
     "monkey"
   ],

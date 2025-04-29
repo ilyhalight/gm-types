@@ -82,7 +82,7 @@ export type GMXmlHttpRequestDetails = {
    * Send the data string in binary mode
    *
    * @default false
-   * @available Greasemonkey, Tampermonkey, Violetmonkey 2.12.2
+   * @available Greasemonkey, Tampermonkey, Violentmonkey 2.12.2
    */
   binary?: boolean;
   /**
@@ -123,14 +123,14 @@ export type GMXmlHttpRequestDetails = {
    * When true, this is a synchronous request. In this mode, more data will be available in the return value.
    *
    * @warning The entire Firefox UI will be locked and frozen until the request completes.
-   * @warning ❌ Tampermonkey, ❌ Violetmonkey
+   * @warning ❌ Tampermonkey, ❌ Violentmonkey
    */
   synchronous?: boolean;
   /**
    * The number of milliseconds to wait before terminating the call; zero (the default) means wait forever.
    *
    * @default 0
-   * @available Greasemonkey, Tampermonkey, Violetmonkey 2.9.5+
+   * @available Greasemonkey, Tampermonkey, Violentmonkey 2.9.5+
    */
   timeout?: number;
   /**
@@ -173,7 +173,7 @@ export type GMXmlHttpRequestDetails = {
    * Don't send cookies with the request (enforces fetch mode)
    *
    * @default false
-   * @available Tampermonkey, Violetmonkey 2.10.1+
+   * @available Tampermonkey, Violentmonkey 2.10.1+
    */
   anonymous?: boolean;
   /**
@@ -189,7 +189,7 @@ export type GMXmlHttpRequestDetails = {
   /**
    * callback to be executed on load start, provides access to the stream object if responseType is set to stream
    *
-   * @available Tampermonkey, Violetmonkey 2.12.5+
+   * @available Tampermonkey, Violentmonkey 2.12.5+
    */
   onloadstart?: OnLoadStartHandler;
   onprogress?: OnProgressHandler;
@@ -209,13 +209,13 @@ export type GMXmlHttpResponse<R extends XHResponseType = "text", T = null> = {
   /**
    * Property for progress callbacks
    *
-   * @available Greasemonkey, Violetmonkey
+   * @available Greasemonkey, Violentmonkey
    */
   lengthComputable: null | boolean;
   /**
    * Property for progress callbacks
    *
-   * @available Greasemonkey, Violetmonkey
+   * @available Greasemonkey, Violentmonkey
    */
   loaded: null | number;
   readyState: XHRReadyState;
@@ -229,8 +229,8 @@ export type GMXmlHttpResponse<R extends XHResponseType = "text", T = null> = {
    * The response data as XML document
    *
    * @note Greasemonkey return boolean instead of Document|null
-   * @note Violetmonkey return Document|null and also can return string in Firefox
-   * @available Tampermonkey, Greasemonkey (read note), Violetmonkey 2.13.4+ (read note)
+   * @note Violentmonkey return Document|null and also can return string in Firefox
+   * @available Tampermonkey, Greasemonkey (read note), Violentmonkey 2.13.4+ (read note)
    */
   responseXML: boolean | Document | string | null;
   status: number;
@@ -238,7 +238,7 @@ export type GMXmlHttpResponse<R extends XHResponseType = "text", T = null> = {
   /**
    * Property for progress callbacks
    *
-   * @available Greasemonkey, Violetmonkey
+   * @available Greasemonkey, Violentmonkey
    */
   total: null | number;
 };

@@ -4,7 +4,7 @@
 export type ScriptHandler =
   | "Greasemonkey"
   | "Tampermonkey"
-  | "Violetmonkey"
+  | "Violentmonkey"
   | "FireMonkey"
   | "OrangeMonkey"
   | "AdGuard"
@@ -24,12 +24,12 @@ export type RunAt =
   | "document-idle";
 
 /**
- * @available Violetmonkey, OrangeMonkey
+ * @available Violentmonkey, OrangeMonkey
  */
 export type RunAtWithEmpty = "" | RunAt;
 
 /**
- * @available Userscripts, Violetmonkey, Firemonkey
+ * @available Userscripts, Violentmonkey, Firemonkey
  */
 export type InjectInto = "auto" | "page" | "content";
 

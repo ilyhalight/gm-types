@@ -4,7 +4,7 @@ import type { GMInfoFields } from "./greasemonkey";
 import type { OMInfoFields } from "./orangemonkey";
 import type { TMInfoFields } from "./tampermonkey";
 import type { USInfoFields } from "./userscripts";
-import type { VMInfoFields } from "./violetmonkey";
+import type { VMInfoFields } from "./violentmonkey";
 
 export type GMInfo =
   | GMInfoFields

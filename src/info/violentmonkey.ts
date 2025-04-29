@@ -8,7 +8,7 @@ import type {
 } from "./shared";
 
 /**
- * @available Violetmonkey
+ * @available Violentmonkey
  */
 export type Arch =
   | "aarch64"
@@ -23,7 +23,7 @@ export type Arch =
   | "x86-64";
 
 /**
- * @available Violetmonkey
+ * @available Violentmonkey
  */
 export type OS =
   | "mac"
@@ -35,7 +35,7 @@ export type OS =
   | "fuchsia";
 
 /**
- * @available Violetmonkey 2.27.0
+ * @available Violentmonkey 2.27.0
  */
 export type FullVersionItem = {
   brand: string;
@@ -48,7 +48,7 @@ export type FullVersionItem = {
  * GM_info.platform is more reliable as the data is obtained in the background page of Violentmonkey
  * using a specialized extension API (browser.runtime.getPlatformInfo and getBrowserInfo).
  *
- * @available Violetmonkey
+ * @available Violentmonkey
  */
 export type Platform = {
   arch: Arch;
@@ -59,7 +59,7 @@ export type Platform = {
    * so it's not affected by devtools of the web page tab.
    * Only present in browsers that implement this API (Chromium >= 90).
    *
-   * @available Violetmonkey 2.27.0
+   * @available Violentmonkey 2.27.0
    */
   fullVersionList?: FullVersionItem[];
   /**
@@ -67,14 +67,14 @@ export type Platform = {
    * so it's not affected by devtools of the web page tab.
    * Only present in browsers that implement this API (Chromium >= 90).
    *
-   * @available Violetmonkey 2.27.0
+   * @available Violentmonkey 2.27.0
    */
   mobile?: boolean;
   os: OS;
 };
 
 /**
- * @available Violetmonkey 2.20.2+
+ * @available Violentmonkey 2.20.2+
  */
 export type UserAgentData = {
   brands: UADataValues["brands"];
@@ -87,7 +87,7 @@ export type UserAgentData = {
 
 /**
  * @see https://violentmonkey.github.io/api/gm/#gm_info
- * @available Violetmonkey
+ * @available Violentmonkey
  */
 export type VMInfoScriptMeta = Omit<
   InfoScriptMeta<ResourceItem[]>,
@@ -122,30 +122,30 @@ export type VMInfoScriptMeta = Omit<
 
 /**
  * @see https://violentmonkey.github.io/api/gm/#gm_info
- * @available Violetmonkey
+ * @available Violentmonkey
  */
 export type VMInfoFields = InfoFields<VMInfoScriptMeta> & {
-  scriptHandler: "Violetmonkey";
+  scriptHandler: "Violentmonkey";
   /**
    * The injection mode of current script
    *
-   * @available Violetmonkey
+   * @available Violentmonkey
    */
   injectInto?: InjectInto;
   /**
    * True when this is an incognito profile (Chrome) or private mode (Firefox)
    *
-   * @available Violetmonkey 2.15.4+
+   * @available Violentmonkey 2.15.4+
    */
   isIncognito: boolean;
   /**
-   * @available Violetmonkey
+   * @available Violentmonkey
    */
   platform: Platform;
   /**
    * Whether the script will be updated automatically.
    *
-   * @available Violetmonkey
+   * @available Violentmonkey
    */
   scriptWillUpdate: boolean;
   /**
@@ -153,7 +153,7 @@ export type VMInfoFields = InfoFields<VMInfoScriptMeta> & {
    * so it cannot be overridden by other extensions/userscripts,
    * but unlike GM_info.platform it can be customized in devtools “device emulation” or “network conditions” for this tab.
    *
-   * @available Violetmonkey 2.20.2+
+   * @available Violentmonkey 2.20.2+
    */
   userAgent: string;
   /**
@@ -167,12 +167,12 @@ export type VMInfoFields = InfoFields<VMInfoScriptMeta> & {
    * Violentmonkey implements the official API,
    * including getHighEntropyValues function to obtain the extra info asynchronously.
    *
-   * @available Violetmonkey 2.20.2+
+   * @available Violentmonkey 2.20.2+
    */
   userAgentData?: UserAgentData;
   /**
    * A unique ID of the script.
-   * @available Violetmonkey
+   * @available Violentmonkey
    */
   uuid: string;
 };
