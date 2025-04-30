@@ -61,9 +61,10 @@ declare global {
    * @note In Firemonkey, if grant has GM_setValue and GM.setValue, GM_setValue becomes unvailable
    * @warning ❌ UserScripts
    */
-  function GM_setValue<
-    T extends string | boolean | number | undefined = undefined
-  >(key: string, value: T): undefined;
+  function GM_setValue<T extends KeysOrDefaultValue = undefined>(
+    key: string,
+    value: T
+  ): undefined;
 
   /**
    * @available Tampermonkey 5.3+, Violentmonkey 2.19.1+

@@ -55,9 +55,10 @@ declare global {
      * @available Greasemonkey, Tampermonkey, Violentmonkey, UserScripts, AdGuard, FireMonkey
      * @note In FireMonkey, if grant has GM_setValue and GM.setValue, GM_setValue becomes unvailable
      */
-    function setValue<
-      T extends string | boolean | number | undefined = undefined
-    >(key: string, value: T): Promise<undefined>;
+    function setValue<T extends KeysOrDefaultValue = undefined>(
+      key: string,
+      value: T
+    ): Promise<undefined>;
 
     /**
      * @available Tampermonkey 5.3+, Violentmonkey 2.19.1+

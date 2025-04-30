@@ -1,3 +1,7 @@
+# 1.0.3
+
+- Fixed `setValue` type value in `GM.` and `GM_` APIs
+
 # 1.0.2
 
 - Added `addValueChangeListener` and `removeValueChangeListener` in `GM.` and `GM_` APIs
