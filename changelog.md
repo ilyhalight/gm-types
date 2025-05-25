@@ -1,3 +1,10 @@
+# 1.0.4
+
+- Added export `XHRBody`
+- Added `VMXHROnErrorHandler`
+- Updated types in `XHRBody` type
+- Fixed typo in some comments
+
 # 1.0.3
 
 - Fixed `setValue` type value in `GM.` and `GM_` APIs

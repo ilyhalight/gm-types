@@ -1,7 +1,7 @@
 {
   "name": "@toil/gm-types",
   "description": "All-in-One GM API types (Greasemonkey, Tampermonkey, Violentmonkey and etc)",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Toil",
   "license": "MIT",
   "repository": {

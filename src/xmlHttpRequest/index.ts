@@ -4,6 +4,12 @@ import type { HttpMethod } from "../web/http";
  * @see https://github.com/lisonge/vite-plugin-monkey/blob/01a5e89f4dd653232c5430b499fef94981d7f1b9/packages/vite-plugin-monkey/src/client/types/xmlhttpRequest.ts
  */
 export type XHResponseMap = {
+  /**
+   * CUSTOM TYPE. i guess null available only in tampermonkey onerror
+   *
+   * @available Tampermonkey
+   */
+  null: null;
   text: string;
   json: any;
   arrayBuffer: ArrayBuffer;
@@ -13,7 +19,11 @@ export type XHResponseMap = {
 };
 
 export type XHResponseType = keyof XHResponseMap;
-export type XHREventHandler = (response: GMXmlHttpResponse) => any;
+export type XHREventHandler<T extends XHResponseType = "text"> = (
+  response: GMXmlHttpResponse<T>
+) => any;
+
+export type VMXHROnErrorHandler = (response: Error) => any;
 
 /**
  * Will be called when the request is aborted
@@ -23,7 +33,7 @@ export type OnAbortHandler = XHREventHandler;
 /**
  * Will be called if an error occurs while processing the request
  */
-export type OnErrorHandler = XHREventHandler;
+export type OnErrorHandler = XHREventHandler<"null"> | VMXHROnErrorHandler;
 
 /**
  * Will be called when the request has completed successfully
@@ -68,6 +78,7 @@ export type XHRReadyState = 0 | 1 | 2 | 3 | 4;
  * @available Tampermonkey (build 6180+, enforces fetch mode)
  */
 export type XHRRedirect = "follow" | "error" | "manual";
+export type XHRBody = File | object | unknown[] | XMLHttpRequestBodyInit | null;
 
 export type GMXmlHttpRequestDetails = {
   /**
@@ -94,7 +105,7 @@ export type GMXmlHttpRequestDetails = {
    *
    * @throws OrangeMonkey convert all data to string and can throw invalid data for FormData and maybe something else
    */
-  data?: string | Blob | File | object | unknown[] | FormData | URLSearchParams;
+  data?: XHRBody;
   /**
    * A set of headers to include in the request
    *
@@ -226,6 +237,10 @@ export type GMXmlHttpResponse<R extends XHResponseType = "text", T = null> = {
   responseHeaders: string;
   responseText: string;
   /**
+   * @available Tampermonkey
+   */
+  error?: string;
+  /**
    * The response data as XML document
    *
    * @note Greasemonkey return boolean instead of Document|null
@@ -241,4 +256,8 @@ export type GMXmlHttpResponse<R extends XHResponseType = "text", T = null> = {
    * @available Greasemonkey, Violentmonkey
    */
   total: null | number;
+  /**
+   * @available Tampermonkey
+   */
+  toString(): string;
 };

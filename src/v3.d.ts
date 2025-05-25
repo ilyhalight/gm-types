@@ -119,7 +119,7 @@ declare global {
 
   /**
    * @available Tampermonkey, Violentmonkey, OrangeMonkey, Firemonkey, UserScripts, AdGuard (!)
-   * @throws AdGuard using your own proxy for all requests and can throw on error statuc code
+   * @throws AdGuard using your own proxy for all requests and can throw on error static code
    * @warning ❌ Greasemonkey
    */
   function GM_xmlhttpRequest(details: GMXmlHttpRequestDetails): {
