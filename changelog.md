@@ -1,3 +1,8 @@
+# 1.0.5
+
+- Removed declare function in declare global (`v4.d.ts`)
+- Bump workspace depends
+
 # 1.0.4
 
 - Added export `XHRBody`
