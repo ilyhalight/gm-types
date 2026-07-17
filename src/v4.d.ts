@@ -122,14 +122,14 @@ declare global {
      * @available Greasemonkey, Tampermonkey, Violentmonkey, FireMonkey, AdGuard
      * @warning ❌ UserScripts
      */
-    declare function getResourceUrl(name: string): string;
+    function getResourceUrl(name: string): string;
     /**
      * Retrieves a blob: or data: URL of a resource from the metadata block.
      *
      * @param isBlobUrl (default: true) - return `blob:`?
      * @available Violentmonkey 2.13.1+
      */
-    declare function getResourceUrl(name: string, isBlobUrl: boolean = true);
+    function getResourceUrl(name: string, isBlobUrl?: boolean): string;
 
     /**
      * @available Tampermonkey

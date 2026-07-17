@@ -140,7 +140,7 @@ declare global {
    * @param isBlobUrl (default: true) - return `blob:`?
    * @available Violentmonkey 2.13.1+
    */
-  function GM_getResourceURL(name: string, isBlobUrl: boolean = true);
+  function GM_getResourceURL(name: string, isBlobUrl = true);
 
   /**
    * @available Tampermonkey
